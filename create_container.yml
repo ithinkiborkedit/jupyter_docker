@@ -15,3 +15,15 @@
       image: '{{ image }}'
       name: '{{ container_name }}'
       command: sleep infinity
+
+  - name: Add the container to the inventory
+    add_host:
+      hostname: '{{ container_name }}'
+      ansible_connection: docker
+      ansible_python_interpretator: /usr/bin/python3
+  
+    hosts: '{{ container_name }}'
+    tasks:
+      include_role:
+        name: install_jupyter
+

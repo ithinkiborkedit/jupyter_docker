@@ -1,0 +1,6 @@
+---
+  - name: Install Jupyter Lab
+    pip:
+      name: jupyterlab
+      state: installed
+    
