@@ -1,0 +1,12 @@
+---
+- hosts: localhost
+  connection: local
+  become: root
+  vars:
+   image: centos:7
+   container_name: jupyter_container
+   image_name: jupyterlab
+  tasks:
+  - name: Make image available
+    docker_image:
+      name: '{{ image }}'
