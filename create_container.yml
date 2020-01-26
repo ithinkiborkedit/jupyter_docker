@@ -10,3 +10,8 @@
   - name: Make image available
     docker_image:
       name: '{{ image }}'
+  - name: Create container
+    docker_container:
+      image: '{{ image }}'
+      name: '{{ container_name }}'
+      command: sleep infinity
