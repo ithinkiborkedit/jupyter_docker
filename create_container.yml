@@ -1,5 +1,5 @@
 ---
-- hosts: localhost
+- hosts: all
   connection: local
   become: root
   vars:
@@ -21,9 +21,6 @@
       hostname: '{{ container_name }}'
       ansible_connection: docker
       ansible_python_interpretator: /usr/bin/python3
+
   
-    hosts: '{{ container_name }}'
-    tasks:
-      include_role:
-        name: install_jupyter
 
